@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script>
+      function play() {
+        const audio = document.getElementById("audio");
+        audio.play();
+        document.querySelector(".face").classList.add("spin");
+        document.querySelector(".face").classList.remove("pulse");
+      }
+
+      function stop() {
+        document.querySelector(".face").classList.add("pulse");
+        document.querySelector(".face").classList.remove("spin");
+      }
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="App">
+      <header>
+        <h2>Latest track from ACP-Z</h2>
+        <h1>Ballard of the Mallard</h1>
+      </header>
+      <img src="./acp-z.png" onclick="play()" class="face pulse" />
+      <audio id="audio" onended="stop()">
+        <source src="./song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </body>
+</html>
